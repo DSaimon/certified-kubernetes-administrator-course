@@ -126,10 +126,16 @@
 
 1. Run the command **`kubectl edit replicaset new-replica-set`**, modify the image name to **`busybox`** and then save the file.
    
+   ```
+   Fix the original replica set new-replica-set to use the correct busybox image.
+   Either delete and recreate the ReplicaSet or Update the existing ReplicaSet and then delete all PODs, so new ones with the correct image will be created.
+   ```
+   
    <details>
 
    ```
    $ kubectl edit replicaset new-replica-set
+   $ kubectl get pod -n default --no-headers=true | awk '/new-replica/{print $1}' | xargs kubectl delete -n default pod
    ```
    </details>
 
