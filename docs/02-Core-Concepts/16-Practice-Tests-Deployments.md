@@ -116,16 +116,25 @@ Solutions to the deploments practice test
  
    <details>
    
-   Работает и в одной команде !!!
+   Новый вариант решения! Работает и в одной команде !!!
    
    ```
    kubectl create deployment httpd-frontend --dry-run=client --image httpd:2.4-alpine --replicas=3 -o yaml > alpine.yaml
    ```
    
+   Старый вариант решения
+   
    ```
    $ kubectl create deployment httpd-frontend --image=httpd:2.4-alpine 
    $ kubectl scale deplyoment httpd-frontend --replicas=3
    ```
+  
+   Полезная команда для проверки
+  
+   ```
+   kubectl get all
+   ```
+  
    </details>
 
 
