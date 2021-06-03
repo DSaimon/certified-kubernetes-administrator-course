@@ -137,7 +137,7 @@ Solutions to the deploments practice test
    
    ```
    $ kubectl create deployment httpd-frontend --image=httpd:2.4-alpine 
-   $ kubectl scale deplyoment httpd-frontend --replicas=3
+   $ kubectl scale deployment httpd-frontend --replicas=3
    ```
   
    Полезная команда для проверки
