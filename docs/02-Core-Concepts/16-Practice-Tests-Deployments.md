@@ -123,7 +123,9 @@ Solutions to the deploments practice test
    ```
    </details>
 
-1. Run the command below command
+1. Run the command below command. 
+   
+   Команды для перепроверки. Повтори лабу )
  
    <details>
    
