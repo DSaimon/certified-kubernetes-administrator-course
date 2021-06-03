@@ -127,7 +127,7 @@ Solutions to the deploments practice test
  
    <details>
    
-   Новый вариант решения! Работает и в одной команде !!!
+   Новый вариант решения! Работает и в одной команде !!!  При повторном прохождении лабы через пару дней - почему то не сработала эта одна команда. Странно, надо попробовать снова.
    
    ```
    kubectl create deployment httpd-frontend --dry-run=client --image httpd:2.4-alpine --replicas=3 -o yaml > alpine.yaml
