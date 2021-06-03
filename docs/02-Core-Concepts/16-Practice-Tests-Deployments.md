@@ -105,7 +105,7 @@ Solutions to the deploments practice test
 
 1. The value for **`kind`** is incorrect. It should be **`Deployment`** with a capital **`D`**. Update the deployment definition and create the deployment.
    
-   Также нашел, что надо добавить - labels name:bysubox-pod - этой метки не было.
+   Также нашел, что надо добавить - labels name:bysubox-pod - этой метки не было. Так как в примерах как писать deployment.yml - есть такой момент. Но что интересно работает в лабе без этой label - интересно почему так ) Надо почитать подробнее.
    
    ```
    apiVersion: apps/v1
