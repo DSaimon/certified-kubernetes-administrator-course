@@ -41,6 +41,21 @@ Solutions to practice test for namespaces
 
 1. Connectivity Test
    
+   Получилось в UI законнектится к db-service порту 3306
+   
+   так как есть сервис в namespace blue
+   
+  ```
+   root@controlplane:~# kubectl get all --namespace marketing 
+   NAME           READY   STATUS    RESTARTS   AGE
+   pod/blue       1/1     Running   0          8m11s
+   pod/mysql-db   1/1     Running   0          8m11s
+
+   NAME                   TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+   service/blue-service   NodePort   10.101.77.149   <none>        8080:30082/TCP   8m10s
+   service/db-service     NodePort   10.108.9.144    <none>        3306:32404/TCP   8m9s
+  ```
+   
    <details>
 
    ```
