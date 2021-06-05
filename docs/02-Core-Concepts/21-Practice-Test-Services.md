@@ -72,12 +72,10 @@
 
   <details>
 
-  ```
-  $ kubectl create -f service-definition-1.yaml
-  ```
+
   
   ```
-  root@controlplane:~# cat service-definition-1.yaml 
+  root@controlplane:~# vim service-definition-1.yaml 
   ---
   apiVersion: v1
   kind: Service
@@ -91,6 +89,10 @@
         nodePort: 30080
     selector:
       name: simple-webapp
+  ```
+  
+  ```
+  $ kubectl create -f service-definition-1.yaml
   ```
   
   ```
