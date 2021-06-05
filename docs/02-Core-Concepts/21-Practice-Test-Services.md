@@ -75,6 +75,31 @@
   ```
   $ kubectl create -f service-definition-1.yaml
   ```
+  
+  ```
+  root@controlplane:~# cat service-definition-1.yaml 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-service
+spec:
+  type: NodePort
+  ports:
+    - targetPort: 8080
+      port: 8080
+      nodePort: 30080
+  selector:
+    name: simple-webapp
+  ```
+  
+  ```
+  root@controlplane:~# kubectl get services
+  NAME             TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
+  kubernetes       ClusterIP   10.96.0.1      <none>        443/TCP          21m
+  webapp-service   NodePort    10.110.67.56   <none>        8080:30080/TCP   3s
+  ```
+  
   </details>
 
 
