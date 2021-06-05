@@ -62,7 +62,7 @@ In this section we will take a look at **`services`** in kubernetes
          type: front-end
        ```
 
-    ![srvnp1](../../images/srvnp1.PNG)
+    ![srvnp1](../../images/srvnp1.png)
       
       #### To create the service
       ```
