@@ -48,7 +48,7 @@
   ```
   </details>
 
-- Run the command **`kubectl get deployment`** and count the number of pods.
+- Run the command **`kubectl get deployment`** and count the number of services - 1.
 
   <details>
 
@@ -57,7 +57,7 @@
   ```
   </details>
 
-- Run the command **`kubectl describe deployment`** and look under the containers section.
+- Run the command **`kubectl describe deployment`** and look name of image under the containers section .
 
   <details>
 
