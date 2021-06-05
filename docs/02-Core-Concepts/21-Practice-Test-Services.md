@@ -78,19 +78,19 @@
   
   ```
   root@controlplane:~# cat service-definition-1.yaml 
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: webapp-service
-spec:
-  type: NodePort
-  ports:
-    - targetPort: 8080
-      port: 8080
-      nodePort: 30080
-  selector:
-    name: simple-webapp
+  ---
+  apiVersion: v1
+  kind: Service
+  metadata:
+    name: webapp-service
+  spec:
+    type: NodePort
+    ports:
+      - targetPort: 8080
+        port: 8080
+        nodePort: 30080
+    selector:
+      name: simple-webapp
   ```
   
   ```
