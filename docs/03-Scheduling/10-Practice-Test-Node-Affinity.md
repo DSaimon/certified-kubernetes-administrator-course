@@ -21,6 +21,13 @@ Solutions to practice test - node affinity
                       kubernetes.io/hostname=node01
                       kubernetes.io/os=linux
   ```
+  
+  Лучше даже использовать команду
+  
+  ```
+  kubectl get nodes node01 --show-labels
+  ```
+  
   </details>
 
 - Run the command 'kubectl describe node node01' and see the label section
@@ -30,6 +37,13 @@ Solutions to practice test - node affinity
   ```
   $ kubectl describe node node01
   ```
+  
+  Лучше даже использовать команду
+  
+  ```
+  kubectl get nodes node01 --show-labels
+  ```
+    
   </details>
 
 - Run the command 'kubectl label node node01 color=blue'.
