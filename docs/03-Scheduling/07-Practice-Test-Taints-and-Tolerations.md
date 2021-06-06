@@ -38,8 +38,8 @@ Solutions to the Practice Test - Taints and Tolerations
   master $ cat /var/answers/mosquito.yaml
   apiVersion: v1
   kind: Pod
-   metadata:
-    name: mosquito
+  metadata:
+   name: mosquito
   spec:
    containers:
    - image: nginx
