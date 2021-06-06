@@ -129,6 +129,13 @@ Solutions to the Practice Test - Taints and Tolerations
   ```
   $ kubectl get pods -o wide
   ```
+  
+  ```
+  root@controlplane:~# kubectl get pods -o wide
+  NAME       READY   STATUS    RESTARTS   AGE     IP           NODE           NOMINATED NODE   READINESS GATES
+  bee        1/1     Running   0          7m23s   10.244.1.2   node01         <none>           <none>
+  mosquito   1/1     Running   0          11m     10.244.0.4   controlplane   <none>           <none>
+  ```
   </details>
 
 
