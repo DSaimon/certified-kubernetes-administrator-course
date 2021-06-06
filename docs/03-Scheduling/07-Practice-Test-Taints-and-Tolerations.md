@@ -111,6 +111,12 @@ Solutions to the Practice Test - Taints and Tolerations
   ```
   $ kubectl taint nodes master node-role.kubernetes.io/master:NoSchedule-
   ```
+  
+  ```
+  root@controlplane:~# kubectl taint nodes controlplane node-role.kubernetes.io/master:NoSchedule-
+  node/controlplane untainted
+  ```
+
   </details>
 
 - Run the command 'kubectl get pods' and see the state
