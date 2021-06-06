@@ -47,8 +47,8 @@ Solutions to Practice Test - Manual Scheduling
     name: nginx
   spec:
     containers:
-      -  image: nginx
-      name: nginx
+    -  image: nginx
+       name: nginx
     nodeName: node01
   ```
   
