@@ -79,7 +79,9 @@ Solutions to practice test - node affinity
 - Answer file at /var/answers/blue-deployment.yaml
   
   <details>
-
+  
+  Предлагаемое решение - не пробовал с ним
+    
   ```
   $ kubectl edit deployment blue
   ```
@@ -133,6 +135,8 @@ Solutions to practice test - node affinity
   
   Add the below under the template.spec section
   
+  Получается добавили следующуюю часть 
+  
   <details>
 
   ```
@@ -167,6 +171,8 @@ Solutions to practice test - node affinity
    
    <details>
 
+   По сути нам надо добавить строки - для верного решения укажи node - master, c controlplane - ошибка, хотя k get pods -o wide - покажет, что поды на ноде control
+     
    ```
    affinity:
         nodeAffinity:
@@ -177,6 +183,8 @@ Solutions to practice test - node affinity
                 operator: Exists
    ```
    
+   Полный ход решения следующий:
+     
    ```
    root@controlplane:~# kubectl create deployment blue --image=nginx --dry-run -o yaml > deployment-red.yaml
    W0606 20:19:25.578516   20389 helpers.go:553] --dry-run is deprecated and can be replaced with --dry-run=client.    
