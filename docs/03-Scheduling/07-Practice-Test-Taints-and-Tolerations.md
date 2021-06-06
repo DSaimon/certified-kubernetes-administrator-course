@@ -104,7 +104,7 @@ Solutions to the Practice Test - Taints and Tolerations
   ```
   </details>
 
-- Run the command 'kubectl taint nodes master node-role.kubernetes.io/master:NoSchedule-'.
+- Run the command 'kubectl taint nodes controlplane node-role.kubernetes.io/master:NoSchedule-'.
   
   <details>
 
