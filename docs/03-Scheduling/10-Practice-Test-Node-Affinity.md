@@ -171,6 +171,42 @@ Solutions to practice test - node affinity
               - key: node-role.kubernetes.io/master
                 operator: Exists
    ```
+   
+   ```
+   root@controlplane:~# cat deployment-red.yaml 
+   apiVersion: apps/v1
+   kind: Deployment
+   metadata:
+     creationTimestamp: null
+     labels:
+     app: red
+     name: red
+   spec:
+     replicas: 2
+     selector:
+       matchLabels:
+         app: red
+     strategy: {}
+     template:
+       metadata:
+         creationTimestamp: null
+         labels:
+           app: red
+       spec:
+         containers:
+         - image: nginx
+           name: nginx
+           resources: {}
+         affinity:
+          nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+              - matchExpressions:
+                - key: node-role.kubernetes.io/master
+                  operator: Exists
+   status: {}
+   ```
+     
    ```
    $ kubectl create -f red-deployment.yaml
    ```
