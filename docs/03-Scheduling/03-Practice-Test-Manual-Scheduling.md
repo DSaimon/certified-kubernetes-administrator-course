@@ -36,9 +36,27 @@ Solutions to Practice Test - Manual Scheduling
 
   ```
   $ vi nginx.yaml
+  ```
+  
+  ```
+  root@controlplane:~# cat nginx.yaml 
+  ---
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: nginx
+  spec:
+    containers:
+      -  image: nginx
+      name: nginx
+    nodeName: node01
+  ```
+  
+  ```
   $ kubectl delete -f nginx.yaml
   $ kubectl create -f nginx.yaml
   ```
+  
   </details>
 
 - Set **`nodeName`** property on the pod to master node
