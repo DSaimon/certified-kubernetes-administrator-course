@@ -10,6 +10,17 @@ Solutions to practice test - node affinity
   ```
   $ kubectl describe node node01
   ```
+  
+  ```
+  root@controlplane:~# kubectl describe nodes node01
+  Name:               node01
+  Roles:              <none>
+  Labels:             beta.kubernetes.io/arch=amd64
+                      beta.kubernetes.io/os=linux
+                      kubernetes.io/arch=amd64
+                      kubernetes.io/hostname=node01
+                      kubernetes.io/os=linux
+  ```
   </details>
 
 - Run the command 'kubectl describe node node01' and see the label section
