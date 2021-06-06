@@ -1,5 +1,16 @@
 # Practice Test - Scheduling
   - Take me to [Video Tutorial](https://kodekloud.com/courses/539883/lectures/9816589)
+
+```
+root@controlplane:~# kubectl describe pods auth            
+Name:         auth
+Namespace:    default
+Priority:     0
+Node:         controlplane/10.61.161.9
+Start Time:   Sun, 06 Jun 2021 11:08:50 +0000
+Labels:       bu=finance
+              env=prod
+```
   
 Solutions to Practice Test - Scheduling
 - Run the command 'kubectl get pods --selector env=dev'
