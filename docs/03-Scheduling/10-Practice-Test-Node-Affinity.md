@@ -117,7 +117,7 @@ Solutions to practice test - node affinity
           name: nginx
           resources: {}     
         affinity:
-         nodeAffinity:
+          nodeAffinity:
             requiredDuringSchedulingIgnoredDuringExecution:
               nodeSelectorTerms:
               - matchExpressions:
