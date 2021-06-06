@@ -161,7 +161,7 @@ Solutions to practice test - node affinity
    blue-566c768bd6-zp979   1/1     Running   0          28m     10.244.1.5   node01         <none>           <none>
    ```
    </details>
-
+ 
  - Answer file at /var/answers/red-deployment.yaml
    Add the below under the template.spec section
    
@@ -177,6 +177,12 @@ Solutions to practice test - node affinity
                 operator: Exists
    ```
    
+   ```
+   root@controlplane:~# kubectl create deployment blue --image=nginx --dry-run -o yaml > deployment-red.yaml
+   W0606 20:19:25.578516   20389 helpers.go:553] --dry-run is deprecated and can be replaced with --dry-run=client.    
+   ```
+     
+     
    ```
    root@controlplane:~# cat deployment-red.yaml 
    apiVersion: apps/v1
@@ -214,6 +220,13 @@ Solutions to practice test - node affinity
      
    ```
    $ kubectl create -f red-deployment.yaml
+   ```
+     
+   либо команда
+     
+   ```
+   root@controlplane:~# kubectl apply -f deployment-red.yaml 
+   deployment.apps/red created
    ```
    ```
    $ kubectl get pods -o wide
