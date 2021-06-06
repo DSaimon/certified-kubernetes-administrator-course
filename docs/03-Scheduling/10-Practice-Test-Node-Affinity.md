@@ -47,7 +47,7 @@ Solutions to practice test - node affinity
 
   ```
   $ kubectl create deployment blue --image=nginx
-  $ kubectl scale deployment blue --replicas=6
+  $ kubectl scale deployment blue --replicas=3
   ```
   </details>
 
