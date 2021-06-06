@@ -154,6 +154,11 @@ Solutions to practice test - node affinity
 
    ```
    $ kubectl get pods -o wide
+   
+   root@controlplane:~# kubectl get pods -o wide
+   NAME                    READY   STATUS    RESTARTS   AGE     IP           NODE           NOMINATED NODE   READINESS GATES
+   blue-566c768bd6-4c7f4   1/1     Running   0          27m     10.244.1.6   node01         <none>           <none>
+   blue-566c768bd6-zp979   1/1     Running   0          28m     10.244.1.5   node01         <none>           <none>
    ```
    </details>
 
@@ -212,6 +217,11 @@ Solutions to practice test - node affinity
    ```
    ```
    $ kubectl get pods -o wide
+     
+   root@controlplane:~# kubectl get pods -o wide
+   NAME                    READY   STATUS    RESTARTS   AGE     IP           NODE           NOMINATED NODE   READINESS GATES
+   red-5cbd45ccb6-chvs9    1/1     Running   0          3m56s   10.244.0.4   controlplane   <none>           <none>
+   red-5cbd45ccb6-dmjsw    1/1     Running   0          3m56s   10.244.0.5   controlplane   <none>           <none>
    ```
    </details>
    
