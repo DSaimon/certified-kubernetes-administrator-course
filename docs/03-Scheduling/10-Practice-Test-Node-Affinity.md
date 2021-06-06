@@ -44,13 +44,28 @@ Solutions to practice test - node affinity
 - Run the below commands
 
   <details>
-
+ 
+  OLD DESICION 
+    
   ```
   $ kubectl create deployment blue --image=nginx
   $ kubectl scale deployment blue --replicas=3
   ```
+  
+  NEW DESICION
+  
+  ```
+  root@controlplane:~# kubectl create deployment blue --image=nginx --dry-run -o yaml > deployment-blue.yaml
+  W0606 19:15:43.784818   26912 helpers.go:553] --dry-run is deprecated and can be replaced with --dry-run=client.
+  ```
+  
+  ```
+  
+  ```
+    
   </details>
-
+  
+  
 - Check if master and node01 have any taints on them that will prevent the pods to be scheduled on them. If there are no taints, the pods can be scheduled on either node.
   
   <details>
@@ -68,8 +83,54 @@ Solutions to practice test - node affinity
   ```
   $ kubectl edit deployment blue
   ```
+  
+  А лучше сделать так - точно верное решение 
+    
+  ```
+  root@controlplane:~# kubectl create deployment blue --image=nginx --dry-run -o yaml > deployment-blue.yaml
+  W0606 19:15:43.784818   26912 helpers.go:553] --dry-run is deprecated and can be replaced with --dry-run=client.
+  ```
+    
+  ```
+  root@controlplane:~# cat deployment-blue.yaml 
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    creationTimestamp: null
+    labels:
+      app: blue
+    name: blue
+  spec:
+    replicas: 3
+    selector:
+      matchLabels:
+        app: blue
+    strategy: {}
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: blue
+      spec:
+        containers:
+        - image: nginx
+          name: nginx
+          resources: {}     
+        affinity:
+         nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+              - matchExpressions:
+                - key: color
+                  operator: In
+                  values:
+                  - blue
+  status: {}
+  ```
+    
   </details>
 
+  
   Add the below under the template.spec section
   
   <details>
