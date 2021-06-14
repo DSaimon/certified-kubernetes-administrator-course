@@ -36,7 +36,7 @@ Q1. How many Labels exist on node node01 ?
   
   </details>
 
-  Q2. What is the value set to the label beta.kubernetes.io/arch on node01?
+Q2. What is the value set to the label beta.kubernetes.io/arch on node01?
   
 - Run the command 'kubectl describe node node01' and see the label section
   
@@ -58,7 +58,7 @@ Q1. How many Labels exist on node node01 ?
   
   </details>
 
-  Q3. Apply a label color=blue to node node01
+Q3. Apply a label color=blue to node node01
   
 - Run the command 'kubectl label node node01 color=blue'.
 
@@ -77,7 +77,7 @@ Q1. How many Labels exist on node node01 ?
     
   </details>
 
-  Q4. Create a new deployment named blue with the nginx image and 3 replicas
+Q4. Create a new deployment named blue with the nginx image and 3 replicas
   
 - Run the below commands
 
@@ -169,7 +169,7 @@ Q1. How many Labels exist on node node01 ?
   ```
   </details>
   
-  Q5. Which nodes can the pods for the blue deployment placed on? Make sure to check taints on both nodes!
+Q5. Which nodes can the pods for the blue deployment placed on? Make sure to check taints on both nodes!
     
 - Check if master and node01 have any taints on them that will prevent the pods to be scheduled on them. If there are no taints, the pods can be scheduled on either node.
   
@@ -204,7 +204,7 @@ Q1. How many Labels exist on node node01 ?
     
   </details>
 
-  Q.6 Set Node Affinity to the deployment to place the pods on node01 only
+Q6. Set Node Affinity to the deployment to place the pods on node01 only
   
   Нет такого ответа уже в лабе. Остатки старых вариантов лаб.
   
@@ -351,7 +351,7 @@ Q1. How many Labels exist on node node01 ?
   </details>
 
   
-  Q7. Which nodes are the pods placed on now?
+Q7. Which nodes are the pods placed on now?
   
  - Run the command 'kubectl get pods -o wide' and see the Node column
    
@@ -370,9 +370,9 @@ Q1. How many Labels exist on node node01 ?
     
    </details>
  
-   Q8. Create a new deployment named red with the nginx image and 2 replicas, and ensure it gets placed on the master/controlplane node only. \
+ Q8. Create a new deployment named red with the nginx image and 2 replicas, and ensure it gets placed on the master/controlplane node only.
      
-   Use the label - node-role.kubernetes.io/master - set on the master/controlplane node.
+ Use the label - node-role.kubernetes.io/master - set on the master/controlplane node.
      
    Name: red
    Replicas: 2
@@ -387,9 +387,7 @@ Q1. How many Labels exist on node node01 ?
    Add the below under the template.spec section
    
    <details>
-
-
-     
+    
    Полный ход решения следующий:
      
    ```
