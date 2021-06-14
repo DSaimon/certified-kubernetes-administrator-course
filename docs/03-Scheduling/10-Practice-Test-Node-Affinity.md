@@ -28,6 +28,10 @@ Solutions to practice test - node affinity
   kubectl get nodes node01 --show-labels
   ```
   
+  ```
+  Ответ: 5
+  ```
+  
   </details>
 
 - Run the command 'kubectl describe node node01' and see the label section
@@ -104,6 +108,8 @@ Solutions to practice test - node affinity
     
   ```
   root@controlplane:~# kubectl create deployment blue --image=nginx --dry-run -o yaml > deployment-blue.yaml
+  
+  видим такое предупреждение
   W0606 19:15:43.784818   26912 helpers.go:553] --dry-run is deprecated and can be replaced with --dry-run=client.
   ```
     
