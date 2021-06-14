@@ -206,9 +206,6 @@ Q5. Which nodes can the pods for the blue deployment placed on? Make sure to che
 
 Q6. Set Node Affinity to the deployment to place the pods on node01 only
   
-  Нет такого ответа уже в лабе. Остатки старых вариантов лаб.
-  
-- Answer file at /var/answers/blue-deployment.yaml
   
   <details>
   
@@ -219,7 +216,7 @@ Q6. Set Node Affinity to the deployment to place the pods on node01 only
   $ kubectl edit deployment blue
   ```
   
-  Вариант 2. Как в видео1
+  Вариант 2. Как в видео.
     
   ```
   root@controlplane:~# kubectl get deployments.apps blue -o yaml > blue.yaml
@@ -386,9 +383,7 @@ Q7. Which nodes are the pods placed on now?
    
    Use the right operator
        
-     
- - Answer file at /var/answers/red-deployment.yaml
-   Add the below under the template.spec section 
+  
    
    <details>
     
@@ -399,7 +394,10 @@ Q7. Which nodes are the pods placed on now?
    W0606 20:19:25.578516   20389 helpers.go:553] --dry-run is deprecated and can be replaced with --dry-run=client.    
    ```
    
-   По сути нам надо добавить строки - для верного решения укажи node - master, c controlplane - ошибка, хотя k get pods -o wide - покажет, что поды на ноде control
+   По сути нам надо добавить строки - именно  master, а не controlplane - иначе ошибка, 
+   хотя kubectl get pods -o wide - покажет, что поды на ноде control
+    
+   Add the below under the template.spec section
      
    ```
    affinity:
