@@ -375,16 +375,20 @@ Q7. Which nodes are the pods placed on now?
  Use the label - node-role.kubernetes.io/master - set on the master/controlplane node.
      
    Name: red
-   Replicas: 2
-   Image: nginx
-   NodeAffinity: requiredDuringSchedulingIgnoredDuringExecution
-   Key: node-role.kubernetes.io/master
-   Use the right operator
      
+   Replicas: 2
    
+   Image: nginx
+   
+   NodeAffinity: requiredDuringSchedulingIgnoredDuringExecution
+   
+   Key: node-role.kubernetes.io/master
+   
+   Use the right operator
+       
      
  - Answer file at /var/answers/red-deployment.yaml
-   Add the below under the template.spec section
+   Add the below under the template.spec section 
    
    <details>
     
