@@ -123,7 +123,7 @@ Q6. Deploy a DaemonSet for FluentD Logging.
   $ kubectl get pod -n kube-system|grep elasticsearch
   ```
   
-  Anwwer
+  Answer
   
   ```
   root@controlplane:~# kubectl apply -f ds.yaml
