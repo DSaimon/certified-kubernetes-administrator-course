@@ -2,6 +2,10 @@
   - Take me to [Practice Test](https://kodekloud.com/courses/539883/lectures/9816595)
   
 Solutions to practice test daemonsets
+
+Q1. How many DaemonSets are created in the cluster in all namespaces?
+Check all namespaces
+
 - Run the command kubectl get daemonsets --all-namespaces
   
   <details>
@@ -9,7 +13,11 @@ Solutions to practice test daemonsets
   ```
   $ kubectl get daemonsets --all-namespaces
   ```
+  
   </details>
+
+
+Q2. Which namespace are the DaemonSets created in?
 
 - Run the command kubectl get daemonsets --all-namespaces
 
@@ -19,6 +27,8 @@ Solutions to practice test daemonsets
   $ kubectl get daemonsets --all-namespaces
   ```
   </details>
+
+Q3. Which of the below is a DaemonSet?
 
 - Run the command kubectl get all --all-namespaces and identify the types
 
@@ -29,7 +39,7 @@ Solutions to practice test daemonsets
   ```
   </details>
 
-  Q4. On how many nodes are the pods scheduled by the DaemonSet kube-proxy
+Q4. On how many nodes are the pods scheduled by the DaemonSet kube-proxy
   
 - Run the command kubectl describe daemonset kube-proxy --namespace=kube-system
 
@@ -38,9 +48,16 @@ Solutions to practice test daemonsets
   ```
   $ kubectl describe daemonset kube-proxy --namespace=kube-system
   ```
+  
+  Answer
+
+  ```
+  Pods Status:  1 Running / 0 Waiting / 0 Succeeded / 0 Failed
+  ```
+  
   </details>
 
-  Q5. What is the image used by the POD deployed by the kube-flannel-ds DaemonSet?
+ Q5. What is the image used by the POD deployed by the kube-flannel-ds DaemonSet?
   
 - Run the command kubectl describe daemonset kube-flannel-ds --namespace=kube-system
 
@@ -56,7 +73,7 @@ Solutions to practice test daemonsets
   
   </details>
     
-  Q6. Deploy a DaemonSet for FluentD Logging.
+Q6. Deploy a DaemonSet for FluentD Logging.
   
   Use the given specifications.
   
