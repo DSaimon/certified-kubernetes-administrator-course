@@ -133,9 +133,14 @@ Q6. Deploy a DaemonSet for FluentD Logging.
   elasticsearch     1         1         0       1            0           <none>                   17s
   kube-flannel-ds   1         1         1       1            1           <none>                   21m
   kube-proxy        1         1         1       1            1           kubernetes.io/os=linux   21m
+  
   root@controlplane:~# kubectl get pod -n kube-system|grep elasticsearch
   elasticsearch-w9pff                    0/1     ContainerCreating   0          37s
+  
+  root@controlplane:~# kubectl get pod -n kube-system|grep elasticsearch
+  elasticsearch-f7grd                    0/1     ContainerCreating   0          28s
   ```
+ 
   
   </details>
 
