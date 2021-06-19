@@ -29,6 +29,8 @@ Solutions to practice test daemonsets
   ```
   </details>
 
+  Q4. On how many nodes are the pods scheduled by the DaemonSet kube-proxy
+  
 - Run the command kubectl describe daemonset kube-proxy --namespace=kube-system
 
   <details>
@@ -38,15 +40,26 @@ Solutions to practice test daemonsets
   ```
   </details>
 
-- Run the command kubectl describe daemonset kube-flannel-ds-amd64 --namespace=kube-system
+  Q5. What is the image used by the POD deployed by the kube-flannel-ds DaemonSet?
+  
+- Run the command kubectl describe daemonset kube-flannel-ds --namespace=kube-system
 
   <details>
 
   ```
-  $ kubectl describe daemonset kube-flannel-ds-amd64 --namespace=kube-system
+  $ kubectl describe daemonset kube-flannel-ds --namespace=kube-system
   ```
+  
+  ```
+  Image:      quay.io/coreos/flannel:v0.13.1-rc1
+  ```
+  
   </details>
     
+  Q6. Deploy a DaemonSet for FluentD Logging.
+  
+  Use the given specifications.
+  
 - Create a daemonset
 
   <details>
@@ -92,6 +105,21 @@ Solutions to practice test daemonsets
   $ kubectl get ds -n kube-system
   $ kubectl get pod -n kube-system|grep elasticsearch
   ```
+  
+  Anwwer
+  
+  ```
+  root@controlplane:~# kubectl apply -f ds.yaml
+  daemonset.apps/elasticsearch created
+  root@controlplane:~# kubectl get ds -n kube-system
+  NAME              DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR            AGE
+  elasticsearch     1         1         0       1            0           <none>                   17s
+  kube-flannel-ds   1         1         1       1            1           <none>                   21m
+  kube-proxy        1         1         1       1            1           kubernetes.io/os=linux   21m
+  root@controlplane:~# kubectl get pod -n kube-system|grep elasticsearch
+  elasticsearch-w9pff                    0/1     ContainerCreating   0          37s
+  ```
+  
   </details>
 
 #### Take me to [Practice Test - Solutions](https://kodekloud.com/courses/certified-kubernetes-administrator-with-practice-tests/lectures/16603698)
