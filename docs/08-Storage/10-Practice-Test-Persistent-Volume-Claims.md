@@ -123,10 +123,21 @@
 
      </details>
 
-  6. Check the Solution
+  6. TASK - PERSISTENT VOLUME CLAIM. Check the Solution
 
      <details>
-
+      
+      ```
+      vim pvc.yaml
+   
+      root@controlplane:~# kubectl create -f pvc.yaml 
+      persistentvolumeclaim/claim-log-1 created
+  
+      root@controlplane:~# kubectl get pvc
+      NAME          STATUS    VOLUME   CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+      claim-log-1   Pending                                                     10s
+      ```
+  
       ```
       kind: PersistentVolumeClaim
       apiVersion: v1
