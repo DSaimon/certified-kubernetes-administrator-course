@@ -104,7 +104,9 @@
       NAME     CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
       pv-log   100Mi      RWX            Retain           Available                                   9s
       ```
-
+         
+      Check  pv.yaml
+     
       ```
       apiVersion: v1
       kind: PersistentVolume
