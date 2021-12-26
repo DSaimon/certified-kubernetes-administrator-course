@@ -32,7 +32,7 @@
       ```
      </details>
 
-  4. Check the Solution
+  4. TASK - VOLUME. Check the Solution
     
      <details>
       
@@ -61,7 +61,9 @@
           Path:          /var/log/webapp
           HostPathType:  
       ```
-
+   
+      Check pod.yaml
+   
       ```
       apiVersion: v1
       kind: Pod
@@ -88,9 +90,20 @@
       ```
       </details>
 
-  5. Check the Solution
+  5. TASK - PERSISTENT VOLUME. Check the Solution
 
      <details>
+      
+      ```
+      vim pv.yaml
+      
+      kubectl create -f pv.yaml
+      persistentvolume/pv-log created
+  
+      root@controlplane:~# kubectl get pv
+      NAME     CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
+      pv-log   100Mi      RWX            Retain           Available                                   9s
+      ```
 
       ```
       apiVersion: v1
