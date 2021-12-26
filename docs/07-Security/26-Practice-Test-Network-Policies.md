@@ -43,22 +43,26 @@ Solutions to practice test - network policies
   
   </details>
   
+  Question 5
+  
 - What is the impact of the rule configured on this Network Policy?
   
   <details>
   
   ```
-  Traffic from internal to payroll pod is blocked
+  Traffic from Internal to Payroll POD is allowed
   ```
   
   </details>
   
+  Question 6
+  
 - What is the impact of the rule configured on this Network Policy?
   
   <details>
   
   ```
-  Internal pod can access port 8080 on payroll pod
+  Internal POD can access port 8080 on Payroll POD
   ```
   
   </details>
