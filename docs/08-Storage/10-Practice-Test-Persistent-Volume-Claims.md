@@ -182,7 +182,14 @@
   10. Check the Solution
 
       <details>
- 
+        
+       ```
+       vim pvc.yaml
+  
+       kubectl delete pvc claim-log-1 
+       kubectl create -f pvc.yaml
+       ```
+  
        ```
        kind: PersistentVolumeClaim
        apiVersion: v1
@@ -200,6 +207,12 @@
   11. Check the Solution
 
       <details>
+  
+       ```
+       root@controlplane:~# kubectl get pvc
+       NAME          STATUS   VOLUME   CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+       claim-log-1   Bound    pv-log   100Mi      RWX                           9s
+       ```
  
        ```
        100Mi
@@ -209,6 +222,27 @@
   12. Check the Solution
 
       <details>
+      
+       ```
+       vim pod.yaml 
+  
+       kubectl delete pod webapp --force
+  
+       kubectl create -f pod.yaml
+  
+       kubectl describe pod webapp
+       Containers:
+          event-simulator:
+            Image:          kodekloud/event-simulator
+            Mounts:
+              /log from log-volume (rw)
+       Volumes:
+         log-volume:
+           Type:       PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
+           ClaimName:  claim-log-1
+       ```
+     
+       Check pod.yaml
  
        ```
        apiVersion: v1
@@ -236,15 +270,24 @@
   13. Check the Solution
 
       <details>
+  
+       ```
+       kubectl describe pv pv-log
+       ```
  
        ```
        Retain
        ```
       </details>
 
-  14. Check the Solution
+  14. TASK. Check the Solution
+      
+      ```
+      What would happen to PV if PVC was destroyed 
+      ```
 
       <details>
+       
  
        ```
        The PV is not delete but not available
@@ -254,6 +297,10 @@
   15. Check the Solution
 
       <details>
+    
+       ```
+       kubectl delete pvc claim-log-1 
+       ```
  
        ```
        The PVC is stuck in `terminating` state
@@ -274,7 +321,9 @@
       <details>
  
        ```
-       kubectl delete pod webapp
+       kubectl delete pod webapp --force
+         
+       kubectl get pod, pvc
        ```
       </details>
 
