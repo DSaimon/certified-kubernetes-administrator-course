@@ -9,7 +9,7 @@
      <details>
 
       ```
-      OK
+      kubectl get pods
       ```
     
      </details>
@@ -19,7 +19,7 @@
      <details>
 
       ```
-      OK
+      kubectl exec webapp -- cat /log/app.log
       ```
      </details>
  
@@ -35,6 +35,32 @@
   4. Check the Solution
     
      <details>
+      
+      ```
+      kubectl get pod webapp -o yaml > pod.yaml
+      vim pod.yaml 
+      
+      kubectl delete pod webapp --force
+      kubectl create -f pod.yaml
+      kubectl describe pod webapp
+      ```
+      
+      We see this
+  
+      ```
+      kubectl describe pod webapp
+      Containers:
+        event-simulator:
+        Image:          kodekloud/event-simulator
+        Mounts:
+          /log from log-volume (rw)
+       
+      Volumes:
+        log-volume:
+          Type:          HostPath (bare host directory volume)
+          Path:          /var/log/webapp
+          HostPathType:  
+      ```
 
       ```
       apiVersion: v1
